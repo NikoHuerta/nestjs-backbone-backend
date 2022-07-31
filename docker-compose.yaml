@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  BackboneNestDB:
+    image: mongo:5.0.0
+    restart: always
+    container_name: BackboneNestDBContainer
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: backbone-nest-db
+    volumes:
+      - ./mongo:/data/db
