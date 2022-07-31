@@ -14,6 +14,8 @@ import { UsersModule } from './users/users.module';
     ConfigModule.forRoot({ 
       load: [ EnvConfiguration ],
       validationSchema: JoiValidationSchema,
+      isGlobal: true,
+      expandVariables: true,
     }),
     ServeStaticModule.forRoot({ 
       rootPath: join(__dirname,'..','public'),
