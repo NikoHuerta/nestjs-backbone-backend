@@ -6,6 +6,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { EnvConfiguration } from './config/app.config';
 import { JoiValidationSchema } from './config/joi.validation';
 import { CommonModule } from './common/common.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { CommonModule } from './common/common.module';
     }),
     MongooseModule.forRoot(process.env.MONGODB),
     CommonModule,
+    AuthModule,
+    UsersModule,
   ],
 })
 export class AppModule {}
